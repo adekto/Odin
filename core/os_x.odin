@@ -200,7 +200,7 @@ file_size :: proc(fd: Handle) -> (i64, Errno) {
 	prev, _ := seek(fd, 0, SEEK_CUR);
 	size, err := seek(fd, 0, SEEK_END);
 	seek(fd, prev, SEEK_SET);
-	return size, err;
+	return i64(size), err;
 }
 
 
